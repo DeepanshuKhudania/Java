@@ -10,10 +10,7 @@ class ThirdPattern{
 		}System.out.println();
 		star++;
 		
-	}
+		}
 		
-	}
-
-
-
+ 	}
 }

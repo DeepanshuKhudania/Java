@@ -25,4 +25,4 @@ class Sort{
 	
 }
 
-//Bubble Sort Algo
+//Bubble Sort Algo, Set data into ascending order.

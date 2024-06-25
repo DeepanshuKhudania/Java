@@ -1,0 +1,45 @@
+package unittestcases;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+public class NewJob{			
+	public static void main(String[] args) throws InterruptedException {
+		ChromeOptions options = new ChromeOptions();
+	    options.addArguments("--use-fake-ui-for-media-stream");
+	    WebDriver driver = new ChromeDriver(options);
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(java.time.Duration.ofSeconds(20));
+		driver.get("https://app.geeker.co/");
+		driver.findElement(By.name("email")).sendKeys("deepanshucustomer@gmail.com");
+		driver.findElement(By.name("password")).sendKeys("aaa@111");
+		driver.findElement(By.id("login-btn")).click();
+		driver.findElement(By.id("dash-get-help-now")).click();
+		driver.findElement(By.xpath("//div//span[@title='Select Software']")).click();
+		driver.findElement(By.xpath("//img[@src='https://winkit-software-images.s3.amazonaws.com/img_1677564821.webp']")).click();
+		driver.findElement(By.xpath("//div//span[@title='Select']")).click();
+		driver.findElement(By.xpath("//div[text()='Office365']")).click();
+		driver.findElement(By.xpath("//textarea[@id='issue-description']")).sendKeys("Test by Deepanshu automation");
+		driver.findElement(By.id("softwares-next-btn")).click();
+		System.out.println(driver.findElement(By.xpath("//div[@class=\"d-flex flex-column justify-content-start p-0-30-10-30 media-max-width-500-width-100p media-max-width-500-padding-lr-0\"]//span[@class=\"job-summary-value\"]")).getText());
+		driver.findElement(By.xpath("//div[@id='asap-btn']")).click();
+		driver.findElement(By.id("get-help-job-summary")).click();
+		ChromeOptions options1 = new ChromeOptions();
+		options1.addArguments("--use-fake-ui-for-media-stream");		
+		WebDriver driver1 = new ChromeDriver(options1);
+		driver1.manage().timeouts().implicitlyWait(java.time.Duration.ofSeconds(240));
+		driver1.get("https://app.geeker.co/");
+		driver1.findElement(By.name("email")).sendKeys("deepanshutechnician@gmail.com");
+		driver1.findElement(By.name("password")).sendKeys("aaa@111");
+		driver1.findElement(By.id("login-btn")).click();
+		driver1.manage().window().maximize();
+		driver1.findElement(By.xpath("//a [@id='notify-jobs-btn']")).click();
+		driver1.findElement(By.xpath("//button[@class='btn notification-btn app-btn app-btn-super-small notification-details-bell-icon']")).click();
+		driver1.findElement(By.xpath("//button[@id='accept-job-btn']")).click();
+		Thread.sleep(5);
+		driver.findElement(By.xpath("//div[text()='Start Meeting Now']")).click();	
+		}
+			
+}
